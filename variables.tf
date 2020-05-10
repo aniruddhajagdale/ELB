@@ -6,6 +6,10 @@ variable "ami" {}
 variable "elb-log-bucket" {
 
 }
+variable "bucket_prefix" {
+  
+}
+
 
 data "aws_availability_zones" "az-name" {}
 

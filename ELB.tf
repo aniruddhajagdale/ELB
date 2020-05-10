@@ -34,9 +34,10 @@ resource "aws_elb" "c-elb" {
   availability_zones = "${data.aws_availability_zones.az-name.names}"
   security_groups    = ["${data.aws_security_groups.sg.ids[0]}"]
   access_logs {
-    bucket   = "${var.elb-log-bucket}"
-    interval = 5
-    enabled  = true
+    bucket        = "${var.elb-log-bucket}"
+    bucket_prefix = "${var.bucket_prefix}"
+    interval      = 5
+    enabled       = true
   }
   listener {
     instance_port     = 80
